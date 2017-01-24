@@ -5,7 +5,7 @@ AccessorFunc(PANEL, "rotation", "Rotation", FORCE_NUMBER) -- so you can call pan
 
 function PANEL:Init()
   self.rotation = 0;
-  self.vertices = 4;
+  self.vertices = 32;
   self.avatar = vgui.Create("AvatarImage", self);
   self.avatar:SetPaintedManually(true);
 end
@@ -21,11 +21,11 @@ function PANEL:CalculatePoly(w, h)
 
   for i = 0, self.vertices do
     local a = math.rad((i / self.vertices) * -360) + self.rotation;
-    table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius }):
+    table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius })
   end
 
   local a = math.rad(0)
-  table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius }):
+  table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius })
   self.data = poly;
 end
 
