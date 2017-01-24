@@ -25,7 +25,7 @@ function PANEL:CalculatePoly(w, h)
   end
 
   local a = math.rad(0)
-  table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius }):
+  table.insert(poly, { x = x + math.sin(a) * radius, y = y + math.cos(a) * radius })
   self.data = poly;
 end
 
